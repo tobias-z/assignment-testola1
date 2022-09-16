@@ -40,7 +40,9 @@ your left hand; turn the cap anti-clockwise)`
 
 ## Two Katas - Task 2
 
-### FAHRENHEIT-TO-CELCIUS CONVERTER
+### FAHRENHEIT-TO-CELSIUS CONVERTER
+
+[fahrenheit-to-celsius](src/test/resources/features/fahrenheit-to-celsius.feature)
 
 ### ROMAN NUMERAL KATA
 
