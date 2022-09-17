@@ -7,8 +7,8 @@ Feature: Celsius To Fahrenheit
 
     Examples:
       | fahrenheit | celsius |
-      | 30         | 86      |
-      | 10         | 50      |
+      | 86         | 30      |
+      | 50         | 10      |
 
   Scenario: Can handle invalid celsius values
     Given a person who wants to see the fahrenheit version of celsius

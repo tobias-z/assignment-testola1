@@ -14,7 +14,7 @@ public class CelsiusToFahrenheitAcceptanceTest {
     private static final String URL = "/convert/celsius-to-fahrenheit";
 
     @Autowired
-    protected MockMvc mvc;
+    private MockMvc mvc;
 
     private Double calculatedFahrenheit;
     private int responseStatus;

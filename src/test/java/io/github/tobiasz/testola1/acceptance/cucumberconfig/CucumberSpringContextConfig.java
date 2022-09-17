@@ -1,4 +1,4 @@
-package io.github.tobiasz.testola1.cucumberconfig;
+package io.github.tobiasz.testola1.acceptance.cucumberconfig;
 
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

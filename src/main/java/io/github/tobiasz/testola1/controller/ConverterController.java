@@ -20,4 +20,9 @@ public class ConverterController {
     public Double fahrenheitToCelsius(@RequestParam("fahrenheit") @NotNull Double fahrenheit) {
         return this.converterService.convertToCelsius(fahrenheit);
     }
+
+    @GetMapping("/celsius-to-fahrenheit")
+    public Double celsiusToFahrenheit(@RequestParam("celsius") @NotNull Double celsius) {
+        return this.converterService.convertToFahrenheit(celsius);
+    }
 }

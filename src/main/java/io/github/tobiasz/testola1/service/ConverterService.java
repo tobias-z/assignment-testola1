@@ -9,4 +9,7 @@ public class ConverterService {
         return (fahrenheit - 32) / 1.8;
     }
 
+    public double convertToFahrenheit(double celsius) {
+        return (celsius * 1.8) + 32;
+    }
 }
