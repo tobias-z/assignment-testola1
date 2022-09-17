@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -30,7 +31,10 @@ public class FahrenheitToCelsiusAcceptanceTest {
 
     @When("the fahrenheit is {double}")
     public void theFahrenheitIsFahrenheit(Double fahrenheit) throws Exception {
-        String response = mvc.perform(get("/fahrenheit-to-celsius"))
+        MockHttpServletRequestBuilder request = get("/convert/fahrenheit-to-celsius")
+                .queryParam("fahrenheit", String.valueOf(fahrenheit));
+
+        String response = mvc.perform(request)
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
