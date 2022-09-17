@@ -23,6 +23,7 @@ public class FahrenheitToCelsiusAcceptanceTest {
     private MockMvc mvc;
 
     private Double calculatedCelsius;
+    private int responseStatus;
 
     @Given("an American who wants to see the temperature")
     public void anAmericanWhoWantsToSeeTheTemperature() {
@@ -46,5 +47,18 @@ public class FahrenheitToCelsiusAcceptanceTest {
     @Then("the celsius is {double}")
     public void theCelsiusIsCelsius(Double expectedCelsius) {
         assertThat(expectedCelsius).isEqualTo(this.calculatedCelsius);
+    }
+
+    @When("the fahrenheit is null")
+    public void theFahrenheitIsNull() throws Exception {
+        this.responseStatus = mvc.perform(get("/convert/fahrenheit-to-celsius"))
+                .andReturn()
+                .getResponse()
+                .getStatus();
+    }
+
+    @Then("the response is a status of {int}")
+    public void theResponseIsAStatusOf(int status) {
+        assertThat(this.responseStatus).isEqualTo(status);
     }
 }
