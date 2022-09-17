@@ -1,41 +1,35 @@
-package io.github.tobiasz.testola1.acceptence;
+package io.github.tobiasz.testola1.acceptance;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@CucumberContextConfiguration
-@SpringBootTest
-@AutoConfigureMockMvc
 public class FahrenheitToCelsiusAcceptanceTest {
 
+    private static final String URL = "/convert/fahrenheit-to-celsius";
+
     @Autowired
-    private MockMvc mvc;
+    protected MockMvc mvc;
 
     private Double calculatedCelsius;
     private int responseStatus;
 
-    @Given("an American who wants to see the temperature")
-    public void anAmericanWhoWantsToSeeTheTemperature() {
+    @Given("a person who wants to see the celsius version of fahrenheit")
+    public void aPersonWhoWantsToSeeTheCelsiusVersionOfFahrenheit() {
         this.calculatedCelsius = null;
+        this.responseStatus = 0;
     }
 
     @When("the fahrenheit is {double}")
     public void theFahrenheitIsFahrenheit(Double fahrenheit) throws Exception {
-        MockHttpServletRequestBuilder request = get("/convert/fahrenheit-to-celsius")
-                .queryParam("fahrenheit", String.valueOf(fahrenheit));
 
-        String response = mvc.perform(request)
+        String response = mvc.perform(get(URL).queryParam("fahrenheit", String.valueOf(fahrenheit)))
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
@@ -51,7 +45,7 @@ public class FahrenheitToCelsiusAcceptanceTest {
 
     @When("the fahrenheit is null")
     public void theFahrenheitIsNull() throws Exception {
-        this.responseStatus = mvc.perform(get("/convert/fahrenheit-to-celsius"))
+        this.responseStatus = mvc.perform(get(URL))
                 .andReturn()
                 .getResponse()
                 .getStatus();
@@ -61,4 +55,5 @@ public class FahrenheitToCelsiusAcceptanceTest {
     public void theResponseIsAStatusOf(int status) {
         assertThat(this.responseStatus).isEqualTo(status);
     }
+
 }

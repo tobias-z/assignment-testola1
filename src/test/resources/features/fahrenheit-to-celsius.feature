@@ -1,7 +1,7 @@
 Feature: Fahrenheit To Celsius
 
   Scenario Outline: Can transform fahrenheit into celsius
-    Given an American who wants to see the temperature
+    Given a person who wants to see the celsius version of fahrenheit
     When the fahrenheit is <fahrenheit>
     Then the celsius is <celsius>
 
@@ -11,6 +11,6 @@ Feature: Fahrenheit To Celsius
       | 50         | 10      |
 
   Scenario: Can handle invalid fahrenheit values
-    Given an American who wants to see the temperature
+    Given a person who wants to see the celsius version of fahrenheit
     When the fahrenheit is null
     Then the response is a status of 400
