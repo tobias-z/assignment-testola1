@@ -25,4 +25,9 @@ public class ConverterController {
     public Double celsiusToFahrenheit(@RequestParam("celsius") @NotNull Double celsius) {
         return this.converterService.convertToFahrenheit(celsius);
     }
+
+    @GetMapping("/arabic-to-roman")
+    public String arabicToRoman(@RequestParam("arabic") @NotNull Integer arabic) {
+        return this.converterService.convertToRomanNumeral(arabic);
+    }
 }

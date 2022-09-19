@@ -32,7 +32,8 @@ your left hand; turn the cap anti-clockwise)`
 9. Put the toothbrush in whatever hand feels most natural.
 10. Put the toothbrush into your mouth, starting on the left side of your mouth.
 11. Put the toothbrush on the furthest back tooth at the bottom of your mouth.
-12. Brush the top of that tooth turning the toothbrush so that the hair portion touches your tooth. Make sure you are brushing it on all sides.
+12. Brush the top of that tooth turning the toothbrush so that the hair portion touches your tooth. Make sure you are
+    brushing it on all sides.
 13. Follow the row of teeth to your right, until the end tooth on right side of your mouth.
 14. Turn the toothbrush 180 degrees, so that the hair is pointing towards the top of your mouth.
 15. Put the toothbrush onto the tooth furthest to the right in the top portion of your mouth.
@@ -40,9 +41,14 @@ your left hand; turn the cap anti-clockwise)`
 
 ## Two Katas - Task 2
 
+### Project Structure
+
 ### FAHRENHEIT-TO-CELSIUS CONVERTER
 
-[fahrenheit-to-celsius](src/test/resources/features/fahrenheit-to-celsius.feature)
+- [Fahrenheit to Celsius feature](src/test/resources/features/fahrenheit-to-celsius.feature)
+- [Feature Implementation](src/test/resources/features/fahrenheit-to-celsius.feature)
+- [Unit Tests](src/test/resources/features/fahrenheit-to-celsius.feature)
+- [Actual implementation](src/test/resources/features/fahrenheit-to-celsius.feature)
 
 ### ROMAN NUMERAL KATA
 
