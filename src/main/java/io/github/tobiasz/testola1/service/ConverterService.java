@@ -44,7 +44,7 @@ public class ConverterService {
             return;
         }
         int numberLength = numbers.length;
-        // If we are above 4 digits ex: 1000 we want to use the same logic but put a '_' in front of the generated sequence
+        // If we are above 4 digits ex: 10000 we want to use the same logic but put a '_' in front of the generated sequence
         if (numberLength > 4) {
             numberLength = numberLength - 3;
             romanNumerals.append('_');

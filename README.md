@@ -43,13 +43,77 @@ your left hand; turn the cap anti-clockwise)`
 
 ### Project Structure
 
+#### Endpoints
+
+Three endpoints are exposed through
+the [ConverterController](src/main/java/io/github/tobiasz/testola1/controller/ConverterController.java)
+
+```http request
+GET /convert/fahrenheit-to-celsius?fahrenheit=100
+```
+
+```http request
+GET /convert/celsius-to-fahrenheit?celsius=30
+```
+
+```http request
+GET /convert/arabic-to-roman?arabic=10000
+```
+
+#### Cucumber Setup
+
+Setting up cucumber with spring boot to allow autowiring of things such as MockMvc and others was a bit of a hassle
+because they can't all have the `@CucumberContextConfiguration` annotation. So to allow multiple files
+the [cucumberconfig](src/test/java/io/github/tobiasz/testola1/acceptance/cucumberconfig) package was created. It makes
+it so that all cucumber step classes in the `acceptance` package will be run using the annotations from
+the `CucumberSpringContextConfig` class. (yes it's weird)
+
 ### FAHRENHEIT-TO-CELSIUS CONVERTER
 
-- [Fahrenheit to Celsius feature](src/test/resources/features/fahrenheit-to-celsius.feature)
-- [Feature Implementation](src/test/resources/features/fahrenheit-to-celsius.feature)
-- [Unit Tests](src/test/resources/features/fahrenheit-to-celsius.feature)
-- [Actual implementation](src/test/resources/features/fahrenheit-to-celsius.feature)
+- [Celsius to Fahrenheit feature](src/test/resources/features/fahrenheit-to-celsius.feature)
+- [Feature Implementation](src/test/java/io/github/tobiasz/testola1/acceptance/FahrenheitToCelsiusAcceptanceTest.java)
+- [Unit Tests](src/test/java/io/github/tobiasz/testola1/service/FahrenheitToCelsiusConverterServiceTest.java)
+- [Actual implementation](src/main/java/io/github/tobiasz/testola1/service/ConverterService.java)
+
+### CELSIUS-TO-FAHRENHEIT CONVERTER
+
+- [Celsius to Fahrenheit feature](src/test/resources/features/celsius-to-fahrenheit.feature)
+- [Feature Implementation](src/test/java/io/github/tobiasz/testola1/acceptance/CelsiusToFahrenheitAcceptanceTest.java)
+- [Unit Tests](src/test/java/io/github/tobiasz/testola1/service/CelsiusToFahrenheitConverterServiceTest.java)
+- [Actual implementation](src/main/java/io/github/tobiasz/testola1/service/ConverterService.java)
 
 ### ROMAN NUMERAL KATA
 
+- [Celsius to Fahrenheit feature](src/test/resources/features/arabic-to-roman.feature)
+- [Feature Implementation](src/test/java/io/github/tobiasz/testola1/acceptance/ArabicToRomanAcceptanceTest.java)
+- [Unit Tests](src/test/java/io/github/tobiasz/testola1/service/ArabicToRomanConverterServiceTest.java)
+
+Implementation is done through these classes:
+
+- [Service](src/main/java/io/github/tobiasz/testola1/service/ConverterService.java)
+- [RomenNumeralPart](src/main/java/io/github/tobiasz/testola1/config/RomenNumeralPart.java)
+- [RomenNumeralPartConfig](src/main/java/io/github/tobiasz/testola1/config/RomenNumeralPartConfig.java)
+- [RomenNumeralPartFactory](src/main/java/io/github/tobiasz/testola1/factory/RomenNumeralPartFactory.java)
+
 ## Thoughts on BDD - Task 3
+
+- What was positive and good about using BDD?
+
+Using BDD helped a lot in understanding the actual problem I was facing. It pretty much just forces a developer to think
+before acting.
+
+It also makes sure you have an idea about the whole flow of the current scenario you're working on. For instance, it
+forced be to think about how the outside would communicate with the feature. In this case through a rest endpoint.
+
+- What was annoying or difficult?
+
+Initially getting Cucumber to work as expected was a bit of a struggle.
+
+There is generally a lot of code that has to be written for each scenario. Albeit I could definitely set up some
+reusable
+code that for the places which are almost doing the same thing.
+
+- What surprised you?
+
+Ones I got everything working correctly it was a rather smooth workflow, as well as usually an error free one, if the
+features were correctly set up.
