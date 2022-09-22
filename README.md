@@ -10,7 +10,7 @@
 
 ### Note
 
-If you want to learn about rust or interested in it, take a look at [Frederik's solutions)[https://github.com/TheRiisager/testing-assignment-01-rust]
+If you want to learn about rust or interested in it, take a look at [Frederik's solutions](https://github.com/TheRiisager/testing-assignment-01-rust)
 
 ## Reflections - Task 1
 
