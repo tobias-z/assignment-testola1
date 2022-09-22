@@ -1,11 +1,18 @@
 # Assignment 1
 
+## Group Members
+
+- Frederik Johnsen, cph-fj111@cphbusiness.dk
+- Jean-Poul Leth-Møller, cph-jl360@cphbusiness.dk
+- Mathias Parking, cph-mp525@cphbusiness.dk
+- Magdalena Wawrzak cph-mw216@cphbusiness.dk
+- Tobias Zimmermann cph-tz11@cphbusiness.dk
+
 ## Reflections - Task 1
 
 ### Shooting
 
-`A woman fired a shot at a man with her gun, but the man did not die. List the possible
-reasons for the man not dying.`
+`A woman fired a shot at a man with her gun, but the man did not die. List the possible reasons for the man not dying.`
 
 - The woman missed her target.
 - The man was not fatally injured.
@@ -15,10 +22,7 @@ reasons for the man not dying.`
 
 ### Alien
 
-`An alien meets you and it asks you to teach it how to brush its teeth. Assume that the
-alien has teeth exactly like yours, and is as smart as you, but it needs a clear step-by-step
-instruction. List the steps. Be as detailed as you can. (Example: Hold the toothpaste with
-your left hand; turn the cap anti-clockwise)`
+`An alien meets you and it asks you to teach it how to brush its teeth. Assume that the alien has teeth exactly like yours, and is as smart as you, but it needs a clear step-by-step instruction. List the steps. Be as detailed as you can. (Example: Hold the toothpaste with your left hand; turn the cap anti-clockwise)`
 
 1. Find the toothpaste and hold it with your left hand.
 2. Turn the toothpaste cap anti-clockwise until it comes of.

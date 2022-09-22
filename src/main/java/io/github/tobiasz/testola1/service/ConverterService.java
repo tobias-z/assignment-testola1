@@ -2,11 +2,10 @@ package io.github.tobiasz.testola1.service;
 
 import io.github.tobiasz.testola1.config.RomenNumeralPart;
 import io.github.tobiasz.testola1.factory.RomenNumeralPartFactory;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.Arrays;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
