@@ -8,6 +8,10 @@
 - Magdalena Wawrzak cph-mw216@cphbusiness.dk
 - Tobias Zimmermann cph-tz11@cphbusiness.dk
 
+### Note
+
+If you want to learn about rust or interested in it, take a look at [Frederik's solutions)[https://github.com/TheRiisager/testing-assignment-01-rust]
+
 ## Reflections - Task 1
 
 ### Shooting
