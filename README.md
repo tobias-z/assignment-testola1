@@ -107,21 +107,20 @@ Implementation is done through these classes:
 
 - What was positive and good about using BDD?
 
-Using BDD helped a lot in understanding the actual problem I was facing. It pretty much just forces a developer to think
+Using BDD helped a lot in understanding the actual problems we were facing. It pretty much just forces a developer to think
 before acting.
 
 It also makes sure you have an idea about the whole flow of the current scenario you're working on. For instance, it
-forced be to think about how the outside would communicate with the feature. In this case through a rest endpoint.
+forced us to think about how the outside would communicate with the feature. In this case through a rest endpoint.
 
 - What was annoying or difficult?
 
 Initially getting Cucumber to work as expected was a bit of a struggle.
 
-There is generally a lot of code that has to be written for each scenario. Albeit I could definitely set up some
-reusable
-code that for the places which are almost doing the same thing.
+There is generally a lot of code that has to be written for each scenario. Albeit we could definitely set up some
+reusable code for the places that are almost doing the same thing.
 
 - What surprised you?
 
-Ones I got everything working correctly it was a rather smooth workflow, as well as usually an error free one, if the
+Ones we got everything working correctly it was a rather smooth workflow, as well as usually an error free one, if the
 features were correctly set up.
