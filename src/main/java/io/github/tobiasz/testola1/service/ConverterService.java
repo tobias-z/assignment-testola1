@@ -30,19 +30,18 @@ public class ConverterService {
         }
         char[] numbers = Integer.toString(arabicNumeral).toCharArray();
         StringBuilder romanNumerals = new StringBuilder();
-        while (numbers.length != 0) {
-            int highestNumber = Character.getNumericValue(numbers[0]);
-            this.addRomanNumeral(highestNumber, numbers, romanNumerals);
-            numbers = Arrays.copyOfRange(numbers, 1, numbers.length);
+        for (int i = 0; i < numbers.length; i++) {
+            int highestNumber = Character.getNumericValue(numbers[i]);
+            int numberLength = numbers.length - i;
+            this.addRomanNumeral(highestNumber, numberLength, romanNumerals);
         }
         return romanNumerals.toString();
     }
 
-    private void addRomanNumeral(int firstNumber, char[] numbers, StringBuilder romanNumerals) {
+    private void addRomanNumeral(int firstNumber, int numberLength, StringBuilder romanNumerals) {
         if (firstNumber == 0) {
             return;
         }
-        int numberLength = numbers.length;
         // If we are above 4 digits ex: 10000 we want to use the same logic but put a '_' in front of the generated sequence
         if (numberLength > 4) {
             numberLength = numberLength - 3;
